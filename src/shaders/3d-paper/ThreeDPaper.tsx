@@ -11,6 +11,7 @@ export type ThreeDPaperProps = {
   className?: string;
   style?: CSSProperties;
   variant?: ThreeDPaperVariant;
+  transparent?: boolean;
 };
 
 const sources: Record<ThreeDPaperVariant, string> = {
@@ -27,7 +28,7 @@ const titles: Record<ThreeDPaperVariant, string> = {
   certificate: "3D Paper — Certificate",
 };
 
-export function ThreeDPaper({ className = "", style, variant = "original" }: ThreeDPaperProps) {
+export function ThreeDPaper({ className = "", style, variant = "original", transparent = false }: ThreeDPaperProps) {
   const hostRef = useRef<HTMLDivElement>(null);
   const [documentVisible, setDocumentVisible] = useState(() => (
     typeof document === "undefined" || !document.hidden
@@ -68,7 +69,7 @@ export function ThreeDPaper({ className = "", style, variant = "original" }: Thr
       style={{
         position: "relative",
         overflow: "hidden",
-        background: "#08080a",
+        background: transparent ? "transparent" : "#08080a",
         pointerEvents: "auto",
         ...style,
       }}
@@ -87,7 +88,7 @@ export function ThreeDPaper({ className = "", style, variant = "original" }: Thr
             width: "100%",
             height: "100%",
             border: 0,
-            background: "#08080a",
+            background: transparent ? "transparent" : "#08080a",
             opacity: ready ? 1 : 0,
             pointerEvents: ready ? "auto" : "none",
             transition: "opacity 240ms ease-out",
