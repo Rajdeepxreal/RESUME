@@ -1,0 +1,6 @@
+{
+  "name": "Rajdeep Borkakati — 3D Resume",
+  "description": "Interactive 3D translucent paper resume showcase for Rajdeep Borkakati, Mechanical Engineering & IoT Systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
